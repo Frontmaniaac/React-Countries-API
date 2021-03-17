@@ -7,6 +7,7 @@
 
 body {
   font-family: "Nunito Sans", sans-serif;
+  background: #2b3945;
 }
 
 .header {
@@ -41,22 +42,53 @@ body {
   grid-template-columns: 1fr;
   gap: 3rem;
   padding: 1rem;
+  background: #2b3945;
 }
-@media (min-width: 520px) {
+@media (min-width: 768px) {
   .countries {
     grid-template-columns: 1fr 1fr;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .countries {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 1440px) {
   .countries {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+.countries__item {
+  color: #fff;
+}
 .countries__item__flag {
-  max-width: 100px;
+  max-width: 100%;
+}
+
+.searchBar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  flex-direction: column;
+  background: #2b3945;
+}
+.searchBar__input {
+  font-size: 18px;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  outline: none;
+  background: #202c37;
+  color: #fff;
+}
+.searchBar__select {
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  max-width: 200px;
+  font-size: 18px;
+  background: #202c37;
+  outline: none;
 }/*# sourceMappingURL=index.css.map */

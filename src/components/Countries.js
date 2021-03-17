@@ -27,6 +27,7 @@ const Countries = () => {
           borders,
           flag,
         } = country;
+
         return (
           <div className="countries__item" key={numericCode}>
             <img className="countries__item__flag" src={flag} alt={name} />

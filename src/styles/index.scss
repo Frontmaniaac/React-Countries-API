@@ -5,15 +5,17 @@
     margin: 0;
     box-sizing: border-box;
 }
-$darkBg:hsl(207, 26%, 17%);
+$darkBlue:hsl(207, 26%, 17%);
+$veryDarkBlue:hsl(209, 23%, 22%);
 body{
     font-family: 'Nunito Sans', sans-serif;
+    background: $veryDarkBlue;
 }
 .header{
     display: flex;
     justify-content: space-between;
     padding: 1rem 1rem;
-    background: $darkBg;
+    background: $darkBlue;
     align-items: center;
     font-size: 16px;
     &__logo{
@@ -40,18 +42,48 @@ body{
     grid-template-columns: 1fr;
     gap: 3rem;
     padding: 1rem;
-    @include breakpoint(mobileL){
+    background: $veryDarkBlue;
+    @include breakpoint(tablet){
         grid-template-columns: 1fr 1fr;
     }
-    @include breakpoint(tablet){
+    @include breakpoint(laptop){
         grid-template-columns: repeat(3,1fr);
     }
-    @include breakpoint(laptop){
+    @include breakpoint(laptopL){
         grid-template-columns: repeat(4,1fr);
     }
+    
     &__item{
+        color: #fff;
         &__flag{
-            max-width: 100px;
+            max-width: 100%;
         }
+    }
+}
+.searchBar{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    flex-direction: column;
+    background: $veryDarkBlue;
+    
+    &__input{
+        font-size: 18px;
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 0.5rem;
+        margin-bottom: 1rem;
+        outline: none;
+        background: $darkBlue;
+        color: #fff;
+    }
+    &__select{
+        color: #fff;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        max-width: 200px;
+        font-size: 18px;
+        background: $darkBlue;
+        outline: none;
     }
 }
