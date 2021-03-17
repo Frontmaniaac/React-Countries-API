@@ -9,7 +9,7 @@ const SearchBar = () => {
         placeholder="Search for a country"
       />
       <select name="regions" id="" className="form__select">
-        <option value="default" disabled selected>
+        <option value="default" disabled defaultValue>
           Filter by Region
         </option>
         <option value="all">All</option>

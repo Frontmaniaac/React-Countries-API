@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 const Countries = () => {
   const [countries, setCountries] = useState([]);
   const fetchCountries = async () => {
@@ -45,6 +45,9 @@ const Countries = () => {
               <p className="countries__item__details__info">
                 Capital: <span>{capital}</span>
               </p>
+              <Link to={`/countries/${name}`} className="learnMoreBtn">
+                Learn more
+              </Link>
             </div>
             {/* <p>
               Sub Region: <span>{subregion}</span>

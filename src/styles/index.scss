@@ -29,9 +29,11 @@ body{
     &__themeSwitch{
         margin-right: 1rem;
         cursor: pointer;
-        &__moonSVG{
+        display: flex;
+        align-items: center;
+        &__moonIcon{
             max-width: 20px;
-            margin-right: 0.5rem;
+            margin-right: 0.6rem;
         }
         &__text{
             min-width: 100px;
@@ -131,5 +133,15 @@ body{
                 max-width: 280px;
             }
         }
-    }
-    
+}
+.learnMoreBtn,.goBackBtn{
+    text-decoration: none;
+    color: #fff;
+    padding: 0.6rem 1rem;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    background: $veryDarkBlue;
+}
+.countryWebsite{
+    padding: 3rem;
+}
