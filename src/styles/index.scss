@@ -18,12 +18,17 @@ body{
     background: $darkBlue;
     align-items: center;
     font-size: 16px;
+    @include breakpoint(tablet){
+        font-size: 24px;
+        padding: 2rem;
+    }
     &__logo{
         font-weight: 800;
         color: #fff;
     }
     &__themeSwitch{
         margin-right: 1rem;
+        cursor: pointer;
         &__moonSVG{
             max-width: 20px;
             margin-right: 0.5rem;
@@ -31,6 +36,9 @@ body{
         &__text{
             min-width: 100px;
             font-weight: 800;
+            @include breakpoint(tablet){
+                min-width: 150px;
+            }
         }
         display: flex;
         text-decoration: none;
@@ -55,35 +63,73 @@ body{
     
     &__item{
         color: #fff;
+        max-width: 500px;
         &__flag{
-            max-width: 100%;
+            width: 100%;
+            border-radius:  .5rem .5rem 0 0;
+        }
+        &__details{
+            margin-top: -8px;
+            padding: 2rem;
+            background: $darkBlue;
+            border-radius: 0 0 .5rem .5rem;
+            &__title{
+                margin-bottom: 1rem;
+                font-size: 1.5em;
+            }
+            &__info{
+                font-size: 1.2em;
+                margin: .3rem 0;
+                & span{
+                    opacity: .6;
+                }
+            }
         }
     }
 }
-.searchBar{
+.form{
     display: flex;
     justify-content: space-between;
     padding: 1rem;
     flex-direction: column;
     background: $veryDarkBlue;
+    align-items: center;
+    font-size: 18px;
+    @include breakpoint(tablet){
+        flex-direction: row;
+        padding:1rem 2rem;
+        font-size: 22px;
+    }
     
-    &__input{
-        font-size: 18px;
-        padding: 0.5rem 1rem;
-        border: none;
-        border-radius: 0.5rem;
-        margin-bottom: 1rem;
-        outline: none;
-        background: $darkBlue;
-        color: #fff;
+        &__input{
+            font-size: 1em;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            outline: none;
+            background: $darkBlue;
+            color: #fff;
+            max-width: 420px;
+            @include breakpoint(tablet){
+                margin-bottom: 0;
+                padding: 0.8rem 1rem;
+            }
+        }
+        &__select{
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            max-width: 200px;
+            font-size: 1em;
+            background: $darkBlue;
+            outline: none;
+            & option{
+                font-size: 0.7em;
+            }
+            @include breakpoint(tablet){
+                max-width: 280px;
+            }
+        }
     }
-    &__select{
-        color: #fff;
-        padding: 0.5rem 1rem;
-        border-radius: 0.5rem;
-        max-width: 200px;
-        font-size: 18px;
-        background: $darkBlue;
-        outline: none;
-    }
-}
+    

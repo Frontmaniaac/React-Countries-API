@@ -24,6 +24,7 @@ body {
 }
 .header__themeSwitch {
   margin-right: 1rem;
+  cursor: pointer;
   display: flex;
   text-decoration: none;
   color: #fff;
@@ -82,6 +83,7 @@ body {
   outline: none;
   background: #202c37;
   color: #fff;
+  max-width: 420px;
 }
 .searchBar__select {
   color: #fff;

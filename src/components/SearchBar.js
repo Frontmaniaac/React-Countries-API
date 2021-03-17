@@ -2,13 +2,13 @@ import React from "react";
 
 const SearchBar = () => {
   return (
-    <div className="searchBar">
+    <form className="form">
       <input
         type="text"
-        className="searchBar__input"
+        className="form__input"
         placeholder="Search for a country"
       />
-      <select name="regions" id="" className="searchBar__select">
+      <select name="regions" id="" className="form__select">
         <option value="default" disabled selected>
           Filter by Region
         </option>
@@ -19,7 +19,7 @@ const SearchBar = () => {
         <option value="europe">Europe</option>
         <option value="oceania">Oceania</option>
       </select>
-    </div>
+    </form>
   );
 };
 export default SearchBar;

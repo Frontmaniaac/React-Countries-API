@@ -31,19 +31,21 @@ const Countries = () => {
         return (
           <div className="countries__item" key={numericCode}>
             <img className="countries__item__flag" src={flag} alt={name} />
-            <h3>{name}</h3>
-            <p>
-              Native Name: <span>{nativeName}</span>
-            </p>
-            <p>
-              Population: <span>{population}</span>
-            </p>
-            <p>
-              Region: <span>{region}</span>
-            </p>
-            <p>
-              Capital: <span>{capital}</span>
-            </p>
+            <div className="countries__item__details">
+              <h3 className="countries__item__details__title">{name}</h3>
+              <p className="countries__item__details__info">
+                Native Name: <span>{nativeName}</span>
+              </p>
+              <p className="countries__item__details__info">
+                Population: <span>{population}</span>
+              </p>
+              <p className="countries__item__details__info">
+                Region: <span>{region}</span>
+              </p>
+              <p className="countries__item__details__info">
+                Capital: <span>{capital}</span>
+              </p>
+            </div>
             {/* <p>
               Sub Region: <span>{subregion}</span>
             </p>
