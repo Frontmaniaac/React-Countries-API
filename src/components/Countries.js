@@ -20,11 +20,6 @@ const Countries = () => {
           population,
           nativeName,
           region,
-          subregion,
-          topLevelDomain,
-          currencies,
-          languages,
-          borders,
           flag,
         } = country;
 
@@ -46,7 +41,7 @@ const Countries = () => {
                 Capital: <span>{capital}</span>
               </p>
               <Link to={`/countries/${name}`} className="learnMoreBtn">
-                Learn more
+                <p>Learn more</p>
               </Link>
             </div>
             {/* <p>

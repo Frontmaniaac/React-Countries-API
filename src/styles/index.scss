@@ -27,7 +27,6 @@ body{
         color: #fff;
     }
     &__themeSwitch{
-        margin-right: 1rem;
         cursor: pointer;
         display: flex;
         align-items: center;
@@ -95,7 +94,6 @@ body{
     padding: 1rem;
     flex-direction: column;
     background: $veryDarkBlue;
-    align-items: center;
     font-size: 18px;
     @include breakpoint(tablet){
         flex-direction: row;
@@ -134,14 +132,84 @@ body{
             }
         }
 }
-.learnMoreBtn,.goBackBtn{
+.goBackBtn,.learnMoreBtn,.linkToCountry{
     text-decoration: none;
-    color: #fff;
-    padding: 0.6rem 1rem;
-    border-radius: 0.5rem;
-    margin-top: 1rem;
-    background: $veryDarkBlue;
+    text-align: center;
+    & p{
+        color: #fff;
+        padding: 0.8rem 1rem;
+        border-radius: 0.5rem;
+        margin: 1rem 0;
+        max-width: 120px;
+        background:$veryDarkBlue;
+    }
+}
+.goBackBtn p{
+    background: $darkBlue;
+    & i{
+        margin-right: 0.5rem;
+    }
+
 }
 .countryWebsite{
-    padding: 3rem;
+    padding: 1.5rem;
+   
 }
+.countrySite{
+    font-size: 20px;
+    color: #fff;
+    @include breakpoint(tablet){
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+    @include breakpoint(laptopL){
+        flex-direction: row;
+        font-size: 24px;
+    }
+    & img{
+        width: 100%;
+        max-width: 600px;
+        
+    }
+    &__textWrap{
+        @include breakpoint(laptopL){
+            margin-left: 4rem;
+        }
+        & h3{
+            font-size: 1.4em;
+            margin: 1rem 0;
+        }
+        & p{
+            margin: 0.2rem 0;
+            & span{
+                opacity: 0.60;
+        }
+        
+    }
+    &__subInfo{
+        margin-top: 2rem;
+    }
+    &__borders{
+        margin-top: 2rem;
+        & p{
+            margin-bottom: 1rem;
+        }
+        &__borderCountries{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: left;
+            & .linkToCountry{
+                min-width: 90px;
+               & p{
+                margin:.2rem .5rem;
+                background: $darkBlue;
+               }
+                
+            }
+        }
+    }
+
+}}
