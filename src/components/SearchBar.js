@@ -1,12 +1,13 @@
 import React from "react";
-
 const SearchBar = () => {
+  const handleInput = () => {};
   return (
     <form className="form">
       <input
         type="text"
         className="form__input"
         placeholder="Search for a country"
+        onChange={handleInput}
       />
       <select name="regions" id="" className="form__select">
         <option value="default" disabled defaultValue>
