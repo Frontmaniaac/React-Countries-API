@@ -11,6 +11,7 @@ const Countries = () => {
   };
 
   const [filter, setFilter] = useState(countries);
+
   const filterCountries = (value = "") => {
     const filteredCountries = countries.filter((item) => {
       if (item == "") {
@@ -21,27 +22,33 @@ const Countries = () => {
     });
     setFilter(filteredCountries);
   };
-  // const filterCountriesByRegion = (selVal = "") => {
-  //   const filteredCountriesRegion = countries.filter((item) => {
-  //     if (item == "") {
-  //       return item;
-  //     } else if (item.region.toLowerCase().includes(selVal.toLowerCase())) {
-  //       return item;
-  //     }
-  //   });
-  //   setFilter(filteredCountriesRegion);
-  // };
+
+  const filterCountriesByRegion = (selVal = "") => {
+    const filteredCountriesRegion = countries.filter((item) => {
+      if (item == "") {
+        return item;
+      } else if (item.region.toLowerCase().includes(selVal.toLowerCase())) {
+        return item;
+      }
+    });
+    setFilter(filteredCountriesRegion);
+  };
+
   useEffect(() => {
     fetchCountries();
   }, []);
+
   useEffect(() => {
     filterCountries();
-    // filterCountriesByRegion();
+    filterCountriesByRegion();
   }, [countries]);
 
   return (
     <>
-      <SearchBar filterCountries={filterCountries} />
+      <SearchBar
+        filterCountries={filterCountries}
+        filterCountriesByRegion={filterCountriesByRegion}
+      />
       <section className="countries">
         {filter.map((country) => {
           const {

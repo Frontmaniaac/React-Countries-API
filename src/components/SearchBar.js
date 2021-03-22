@@ -1,15 +1,14 @@
 import React, { useState } from "react";
+
 const SearchBar = ({ filterCountries, filterCountriesByRegion }) => {
-  const [input, setInput] = useState("");
   const handleInputValue = (e) => {
-    setInput(e.target.value);
-    filterCountries(input);
+    filterCountries(e.target.value);
   };
-  const [select, setSelect] = useState("");
+
   const handleSelectChange = (e) => {
-    setSelect(e.target.value);
-    filterCountriesByRegion(select);
+    filterCountriesByRegion(e.target.value);
   };
+
   return (
     <form className="form">
       <input
@@ -36,4 +35,5 @@ const SearchBar = ({ filterCountries, filterCountriesByRegion }) => {
     </form>
   );
 };
+
 export default SearchBar;

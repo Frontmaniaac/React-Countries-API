@@ -15,6 +15,9 @@ const Country = () => {
     };
     fetchCountryData();
   }, []);
+  const handleCountryClick = () => {
+    console.log("border");
+  };
   return (
     <div className="countryWebsite">
       <Link to="/" className="goBackBtn">
@@ -76,7 +79,11 @@ const Country = () => {
                   <div className="countrySite__textWrap__borders__borderCountries">
                     {borders.map((border) => {
                       return (
-                        <Link to={`/alpha/${border}`} className="linkToCountry">
+                        <Link
+                          to={`/alpha/${border}`}
+                          className="linkToCountry"
+                          onClick={handleCountryClick}
+                        >
                           <p>{border}</p>
                         </Link>
                       );
