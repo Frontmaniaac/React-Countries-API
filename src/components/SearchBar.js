@@ -1,15 +1,21 @@
-import React from "react";
-const SearchBar = () => {
-  const handleInput = () => {};
+import React, { useState } from "react";
+const SearchBar = ({ filterCountries }) => {
+  const [input, setInput] = useState("");
+
+  const handleInputValue = (e) => {
+    setInput(e.target.value);
+    filterCountries(input);
+  };
+
   return (
     <form className="form">
       <input
         type="text"
         className="form__input"
         placeholder="Search for a country"
-        onChange={handleInput}
+        onChange={handleInputValue}
       />
-      <select name="regions" id="" className="form__select">
+      <select name="regions" className="form__select">
         <option value="default" disabled defaultValue>
           Filter by Region
         </option>

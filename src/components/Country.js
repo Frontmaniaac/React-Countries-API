@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
+
 const Country = () => {
   const [country, setCountry] = useState([]);
   const { name } = useParams();
+
   useEffect(() => {
     const fetchCountryData = async () => {
       const response = await fetch(
@@ -35,7 +37,6 @@ const Country = () => {
             population,
             region,
             capital,
-            translations,
           } = item;
           return (
             <article key={numericCode} className="countrySite">
