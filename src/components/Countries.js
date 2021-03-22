@@ -25,7 +25,7 @@ const Countries = () => {
 
   const filterCountriesByRegion = (selVal = "") => {
     const filteredCountriesRegion = countries.filter((item) => {
-      if (item == "") {
+      if (selVal == "all") {
         return item;
       } else if (item.region.toLowerCase().includes(selVal.toLowerCase())) {
         return item;

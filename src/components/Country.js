@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 
 const Country = () => {
   const [country, setCountry] = useState([]);
-  const { name } = useParams();
+  const { name, border } = useParams();
 
   useEffect(() => {
     const fetchCountryData = async () => {
@@ -15,9 +15,13 @@ const Country = () => {
     };
     fetchCountryData();
   }, []);
-  const handleCountryClick = () => {
-    console.log("border");
-  };
+  // const handleCountryClick = async () => {
+  //   const response = await fetch(
+  //     `https://restcountries.eu/rest/v2/alpha/${border}`
+  //   );
+  //   const country = await response.json();
+  //   setCountry(country);
+  // };
   return (
     <div className="countryWebsite">
       <Link to="/" className="goBackBtn">
@@ -79,11 +83,7 @@ const Country = () => {
                   <div className="countrySite__textWrap__borders__borderCountries">
                     {borders.map((border) => {
                       return (
-                        <Link
-                          to={`/alpha/${border}`}
-                          className="linkToCountry"
-                          onClick={handleCountryClick}
-                        >
+                        <Link to={`/alpha/${border}`} className="linkToCountry">
                           <p>{border}</p>
                         </Link>
                       );
