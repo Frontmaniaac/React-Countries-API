@@ -1,12 +1,15 @@
 import React, { useState } from "react";
-const SearchBar = ({ filterCountries }) => {
+const SearchBar = ({ filterCountries, filterCountriesByRegion }) => {
   const [input, setInput] = useState("");
-
   const handleInputValue = (e) => {
     setInput(e.target.value);
     filterCountries(input);
   };
-
+  const [select, setSelect] = useState("");
+  const handleSelectChange = (e) => {
+    setSelect(e.target.value);
+    filterCountriesByRegion(select);
+  };
   return (
     <form className="form">
       <input
@@ -15,7 +18,11 @@ const SearchBar = ({ filterCountries }) => {
         placeholder="Search for a country"
         onChange={handleInputValue}
       />
-      <select name="regions" className="form__select">
+      <select
+        onChange={handleSelectChange}
+        name="regions"
+        className="form__select"
+      >
         <option value="default" disabled defaultValue>
           Filter by Region
         </option>

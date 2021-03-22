@@ -10,12 +10,8 @@ const Countries = () => {
     setCountries(countries);
   };
 
-  useEffect(() => {
-    fetchCountries();
-  }, []);
   const [filter, setFilter] = useState(countries);
   const filterCountries = (value = "") => {
-    console.log(value);
     const filteredCountries = countries.filter((item) => {
       if (item == "") {
         return item;
@@ -25,9 +21,22 @@ const Countries = () => {
     });
     setFilter(filteredCountries);
   };
-
+  // const filterCountriesByRegion = (selVal = "") => {
+  //   const filteredCountriesRegion = countries.filter((item) => {
+  //     if (item == "") {
+  //       return item;
+  //     } else if (item.region.toLowerCase().includes(selVal.toLowerCase())) {
+  //       return item;
+  //     }
+  //   });
+  //   setFilter(filteredCountriesRegion);
+  // };
+  useEffect(() => {
+    fetchCountries();
+  }, []);
   useEffect(() => {
     filterCountries();
+    // filterCountriesByRegion();
   }, [countries]);
 
   return (
