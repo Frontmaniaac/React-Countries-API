@@ -3,7 +3,8 @@ import { Link, useParams } from "react-router-dom";
 
 const Country = () => {
   const [country, setCountry] = useState([]);
-  const { name, border } = useParams();
+  const { name } = useParams();
+  const [borderC, setBorder] = useState();
 
   useEffect(() => {
     const fetchCountryData = async () => {
@@ -13,15 +14,18 @@ const Country = () => {
       const country = await response.json();
       setCountry(country);
     };
+
     fetchCountryData();
   }, []);
-  // const handleCountryClick = async () => {
-  //   const response = await fetch(
-  //     `https://restcountries.eu/rest/v2/alpha/${border}`
-  //   );
-  //   const country = await response.json();
-  //   setCountry(country);
-  // };
+
+  const fetchCountryByBorder = async (val) => {
+    const response = await fetch(
+      `https://restcountries.eu/rest/v2/alpha/${val}`
+    );
+    const borderCountry = await response.json();
+    setBorder(borderCountry);
+  };
+
   return (
     <div className="countryWebsite">
       <Link to="/" className="goBackBtn">
@@ -82,8 +86,15 @@ const Country = () => {
                   <p>Border Countries:</p>
                   <div className="countrySite__textWrap__borders__borderCountries">
                     {borders.map((border) => {
+                      // fetchCountryByBorder(border);
+                      // borderC.map((item) => {
+                      //   const { name } = item;
+                      // });
                       return (
-                        <Link to={`/alpha/${border}`} className="linkToCountry">
+                        <Link
+                          to={`/countries/${name}`}
+                          className="linkToCountry"
+                        >
                           <p>{border}</p>
                         </Link>
                       );

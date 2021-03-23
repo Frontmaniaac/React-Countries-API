@@ -25,6 +25,7 @@ const Header = () => {
       document.documentElement.style.setProperty("--shadow", "0");
     }
   };
+
   return (
     <>
       <header className="header">
