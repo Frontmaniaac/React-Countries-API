@@ -5,27 +5,35 @@
     margin: 0;
     box-sizing: border-box;
 }
-$darkBlue:hsl(207, 26%, 17%);
-$veryDarkBlue:hsl(209, 23%, 22%);
+
+:root{
+    --darkBlue:hsl(207, 26%, 17%);
+    --veryDarkBlue:hsl(209, 23%, 22%);
+    --lightFont:#fff;
+    --darkFont:#000;
+    --shadow:0 0 0;
+}
 body{
     font-family: 'Nunito Sans', sans-serif;
-    background: $veryDarkBlue;
+    background:var(--veryDarkBlue);
 }
 .header{
+
     display: flex;
     justify-content: space-between;
     padding: 1rem 1rem;
-    background: $darkBlue;
+    background:var(--darkBlue);
     align-items: center;
     font-size: 16px;
     transition: 0.3s;
+    
     @include breakpoint(tablet){
         font-size: 24px;
         padding: 2rem;
     }
     &__logo{
         font-weight: 800;
-        color: #fff;
+        color:var(--lightFont);
     }
     &__themeSwitch{
         cursor: pointer;
@@ -44,7 +52,7 @@ body{
         }
         display: flex;
         text-decoration: none;
-        color: #fff;
+        color:var(--lightFont);
     }
 }
 .countries{
@@ -52,7 +60,7 @@ body{
     grid-template-columns: 1fr;
     gap: 3rem;
     padding: 1rem;
-    background: $veryDarkBlue;
+    background:var(--veryDarkBlue);
     transition: 0.3s ;
     @include breakpoint(tablet){
         grid-template-columns: 1fr 1fr;
@@ -65,8 +73,10 @@ body{
     }
     
     &__item{
-        color: #fff;
+        box-shadow: var(--shadow);
+        color:var(--lightFont);
         max-width: 500px;
+        border-radius: .5rem;
         &__flag{
             width: 100%;
             border-radius:  .5rem .5rem 0 0;
@@ -74,7 +84,7 @@ body{
         &__details{
             margin-top: -8px;
             padding: 2rem;
-            background: $darkBlue;
+            background:var(--darkBlue);
             border-radius: 0 0 .5rem .5rem;
             &__title{
                 margin-bottom: 1rem;
@@ -95,7 +105,7 @@ body{
     justify-content: space-between;
     padding: 1rem;
     flex-direction: column;
-    background: $veryDarkBlue;
+    background:var(--veryDarkBlue);
     font-size: 18px;
     @include breakpoint(tablet){
         flex-direction: row;
@@ -104,14 +114,15 @@ body{
     }
     
         &__input{
+            box-shadow: var(--shadow);
             font-size: 1em;
             padding: 0.5rem 1rem;
             border: none;
             border-radius: 0.5rem;
             margin-bottom: 1rem;
             outline: none;
-            background: $darkBlue;
-            color: #fff;
+            background:var(--darkBlue);
+            color:var(--lightFont);
             max-width: 420px;
             @include breakpoint(tablet){
                 margin-bottom: 0;
@@ -119,12 +130,12 @@ body{
             }
         }
         &__select{
-            color: #fff;
+            color:var(--lightFont);
             padding: 0.5rem 1rem;
             border-radius: 0.5rem;
             max-width: 200px;
             font-size: 1em;
-            background: $darkBlue;
+            background:var(--darkBlue);
             outline: none;
             & option{
                 font-size: 0.7em;
@@ -137,17 +148,19 @@ body{
 .goBackBtn,.learnMoreBtn,.linkToCountry{
     text-decoration: none;
     text-align: center;
+    
     & p{
-        color: #fff;
+        color:var(--lightFont);
         padding: 0.8rem 1rem;
         border-radius: 0.5rem;
         margin: 1rem 0;
         max-width: 120px;
-        background:$veryDarkBlue;
+        background:var(--veryDarkBlue);
+        box-shadow: var(--shadow);
     }
 }
 .goBackBtn p{
-    background: $darkBlue;
+    background:var(--darkBlue);
     & i{
         margin-right: 0.5rem;
     }
@@ -159,7 +172,7 @@ body{
 }
 .countrySite{
     font-size: 20px;
-    color: #fff;
+    color:var(--lightFont);
     @include breakpoint(tablet){
         display: flex;
         align-items: center;
@@ -207,7 +220,7 @@ body{
                 min-width: 90px;
                & p{
                 margin:.2rem .5rem;
-                background: $darkBlue;
+                background:var(--darkBlue);
                }
                 
             }

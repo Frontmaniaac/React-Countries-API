@@ -1,19 +1,29 @@
-import React, { useState } from "react";
+import React from "react";
 
 const Header = () => {
   const switchTheme = () => {
-    // const header = document.querySelector(".header");
-    // const countries = document.querySelector(".countries");
-    // const country = document.querySelectorAll(".countries__item__details");
-    // const searchBar = document.querySelector(".form");
-    // const learnMoreBtn = document.querySelector(".learnMoreBtn");
-    // header.classList.toggle("lightThemeShadow");
-    // countries.classList.toggle("lightTheme");
-    // country.forEach((item) => {
-    //   item.classList.toggle("lightThemeShadow");
-    // });
-    // searchBar.classlist.toggle("lightTheme");
-    // learnMoreBtn.classList.toggle("lightTheme");
+    const header = document.querySelector(".header");
+    header.classList.toggle("lightTheme");
+    if (header.classList.contains("lightTheme")) {
+      document.documentElement.style.setProperty("--darkBlue", "#fff");
+      document.documentElement.style.setProperty("--veryDarkBlue", "#fff");
+      document.documentElement.style.setProperty("--lightFont", "#000");
+      document.documentElement.style.setProperty(
+        "--shadow",
+        "2px 2px 8px #666"
+      );
+    } else {
+      document.documentElement.style.setProperty(
+        "--darkBlue",
+        "hsl(207, 26%, 17%)"
+      );
+      document.documentElement.style.setProperty(
+        "--veryDarkBlue",
+        "hsl(209, 23%, 22%)"
+      );
+      document.documentElement.style.setProperty("--lightFont", "#fff");
+      document.documentElement.style.setProperty("--shadow", "0");
+    }
   };
   return (
     <>
