@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-const Country = () => {
+const Country = ({ countriesDictionary }) => {
   const [country, setCountry] = useState([]);
   const { name } = useParams();
 
@@ -15,6 +15,7 @@ const Country = () => {
 
     fetchCountryData();
   }, []);
+  console.log(countriesDictionary);
   return (
     <div className="countryWebsite">
       <Link to="/" className="goBackBtn">

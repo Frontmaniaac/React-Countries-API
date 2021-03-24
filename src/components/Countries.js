@@ -1,20 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
-const Countries = () => {
-  const [countries, setCountries] = useState([]);
-
-  const fetchCountries = async () => {
-    const response = await fetch("https://restcountries.eu/rest/v2/all");
-    const countries = await response.json();
-    setCountries(countries);
-  };
-
+const Countries = ({ countries, fetchCountries, countriesDictionary }) => {
   const [filter, setFilter] = useState(countries);
 
   const filterCountries = (value = "") => {
     const filteredCountries = countries.filter((item) => {
-      if (item == "") {
+      if (!item) {
         return item;
       } else if (item.name.toLowerCase().includes(value.toLowerCase())) {
         return item;
@@ -42,7 +34,7 @@ const Countries = () => {
     filterCountries();
     filterCountriesByRegion();
   }, [countries]);
-  const countriesDictionary = [];
+
   return (
     <>
       <SearchBar
