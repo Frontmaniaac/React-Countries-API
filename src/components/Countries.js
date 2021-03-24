@@ -42,13 +42,14 @@ const Countries = () => {
     filterCountries();
     filterCountriesByRegion();
   }, [countries]);
-
+  const countriesDictionary = [];
   return (
     <>
       <SearchBar
         filterCountries={filterCountries}
         filterCountriesByRegion={filterCountriesByRegion}
       />
+
       <section className="countries">
         {filter.map((country) => {
           const {
@@ -59,8 +60,12 @@ const Countries = () => {
             nativeName,
             region,
             flag,
+            alpha3Code,
           } = country;
-
+          countriesDictionary.push({
+            key: name,
+            shortName: alpha3Code,
+          });
           return (
             <div className="countries__item" key={numericCode}>
               <img className="countries__item__flag" src={flag} alt={name} />
