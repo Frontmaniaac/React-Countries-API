@@ -3,19 +3,16 @@ import { Link, useParams } from "react-router-dom";
 const Country = ({ countriesDictionary }) => {
   const [country, setCountry] = useState([]);
   const { name } = useParams();
-
+  const fetchCountryData = async () => {
+    const response = await fetch(
+      `https://restcountries.eu/rest/v2/name/${name}`
+    );
+    const country = await response.json();
+    setCountry(country);
+  };
   useEffect(() => {
-    const fetchCountryData = async () => {
-      const response = await fetch(
-        `https://restcountries.eu/rest/v2/name/${name}`
-      );
-      const country = await response.json();
-      setCountry(country);
-    };
-
     fetchCountryData();
   }, []);
-  console.log(countriesDictionary);
   return (
     <div className="countryWebsite">
       <Link to="/" className="goBackBtn">
@@ -79,13 +76,15 @@ const Country = ({ countriesDictionary }) => {
                   <div className="countrySite__textWrap__borders__borderCountries">
                     {borders.map((border) => {
                       return (
-                        <Link
-                          to={`/countries/${name}`}
-                          className="linkToCountry"
-                        >
+                        <Link to={`/countries/Iran`} className="linkToCountry">
                           <p>{border}</p>
                         </Link>
                       );
+                      // countriesDictionary.map((val) => {
+                      //   if (val.shortName == border) {
+
+                      //   }
+                      // });
                     })}
                   </div>
                 </div>
