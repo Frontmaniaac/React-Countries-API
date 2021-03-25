@@ -12,7 +12,7 @@ const Country = ({ countriesDictionary }) => {
   };
   useEffect(() => {
     fetchCountryData();
-  }, []);
+  }, [country]);
   return (
     <div className="countryWebsite">
       <Link to="/" className="goBackBtn">
@@ -35,7 +35,6 @@ const Country = ({ countriesDictionary }) => {
             population,
             region,
             capital,
-            alpha3Code,
           } = item;
 
           return (
@@ -75,16 +74,19 @@ const Country = ({ countriesDictionary }) => {
                   <p>Border Countries:</p>
                   <div className="countrySite__textWrap__borders__borderCountries">
                     {borders.map((border) => {
+                      const filterDictionaries = countriesDictionary.filter(
+                        (item) => {
+                          return item.shortName == border;
+                        }
+                      );
                       return (
-                        <Link to={`/countries/Iran`} className="linkToCountry">
-                          <p>{border}</p>
+                        <Link
+                          to={`/countries/${filterDictionaries[0].key}`}
+                          className="linkToCountry"
+                        >
+                          <p>{filterDictionaries[0].key}</p>
                         </Link>
                       );
-                      // countriesDictionary.map((val) => {
-                      //   if (val.shortName == border) {
-
-                      //   }
-                      // });
                     })}
                   </div>
                 </div>

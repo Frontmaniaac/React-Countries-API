@@ -80,6 +80,7 @@ body{
         &__flag{
             width: 100%;
             border-radius:  .5rem .5rem 0 0;
+            
         }
         &__details{
             margin-top: -8px;
@@ -187,7 +188,6 @@ body{
     & img{
         width: 100%;
         max-width: 600px;
-        
     }
     &__textWrap{
         @include breakpoint(laptopL){
@@ -209,13 +209,16 @@ body{
     }
     &__borders{
         margin-top: 2rem;
+        max-width: 800px;
         & p{
             margin-bottom: 1rem;
+            min-width: 200px;
         }
         &__borderCountries{
             display: flex;
             flex-wrap: wrap;
-            justify-content: left;
+            justify-content: center;
+            align-items: center;
             & .linkToCountry{
                 min-width: 90px;
                & p{
